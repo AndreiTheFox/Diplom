@@ -59,4 +59,7 @@
     <string name="new_notification">"New Notification"</string>
     <string name="user_already_exists">"User Already Exists"</string>
     <string name="passwords_are_not_equal">"Password and password confirmation do not match"</string>
+    <string name="posts">Posts</string>
+    <string name="events">Events</string>
+    <string name="users">Users</string>
 </resources>

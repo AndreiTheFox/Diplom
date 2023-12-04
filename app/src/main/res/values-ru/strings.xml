@@ -59,4 +59,7 @@
     <string name="name">Имя</string>
     <string name="repeat_password">Повторите пароль</string>
     <string name="passwords_are_not_equal">Пароль и подтверждение пароля не совпадают</string>
+    <string name="posts">Посты</string>
+    <string name="events">События</string>
+    <string name="users">Пользователи</string>
 </resources>
