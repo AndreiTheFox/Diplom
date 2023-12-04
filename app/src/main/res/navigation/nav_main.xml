@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/feedFragment"
-        android:name="ru.netology.nmedia.activity.FeedFragment"
+        android:name="ru.fox.diplom.activity.FeedFragment"
         android:label="fragment_feed"
         tools:layout="@layout/fragment_feed">
         <action
@@ -29,12 +29,12 @@
 
     <fragment
         android:id="@+id/newPostFragment"
-        android:name="ru.netology.nmedia.activity.NewPostFragment"
+        android:name="ru.fox.diplom.activity.NewPostFragment"
         android:label="fragment_new_post"
         tools:layout="@layout/fragment_new_post" />
     <fragment
         android:id="@+id/postFragment"
-        android:name="ru.netology.nmedia.activity.PostFragment"
+        android:name="ru.fox.diplom.activity.PostFragment"
         android:label="PostFragment"
         tools:layout="@layout/fragment_post">
         <action
@@ -43,12 +43,12 @@
     </fragment>
     <fragment
         android:id="@+id/imageFragment"
-        android:name="ru.netology.nmedia.activity.ImageFragment"
+        android:name="ru.fox.diplom.activity.ImageFragment"
         android:label="ImageFragment"
         tools:layout="@layout/fragment_image" />
     <fragment
         android:id="@+id/myLoginFragment"
-        android:name="ru.netology.nmedia.activity.LoginFragment"
+        android:name="ru.fox.diplom.activity.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login" >
         <action
@@ -57,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="ru.netology.nmedia.activity.RegisterFragment"
+        android:name="ru.fox.diplom.activity.RegisterFragment"
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register">
         <action

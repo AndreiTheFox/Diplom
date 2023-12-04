@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Nmedia</string>
-    <string name="app_text">NmediaAppTextReallyLongText</string>
+    <string name="app_name">Diplom</string>
+    <string name="app_text">DiplomAppTextReallyLongText</string>
     <string name="post_avatar">Post avatar</string>
     <string name="likes_button">Likes Button</string>
     <string name="share_post_button">Share Post Button</string>
@@ -10,7 +10,7 @@
     <string name="Post_menu">Post Menu</string>
     <string name="post_text">Enter your text</string>
     <string name="error_empty_content">Content can`t be empty!</string>
-    <string name="app_header">NMedia</string>
+    <string name="app_header">Diplom</string>
     <string name="publish">Publish</string>
     <string name="rollback_text">Rollback Text</string>
     <string name="chooser_share_post">Share post</string>
@@ -21,7 +21,7 @@
     <string name="play_video">Play video</string>
     <string name="notification_user_liked">%1$s liked %2$s</string>
     <string name="channel_remote_description">Notifications from server</string>
-    <string name="channel_remote_name">Nmedia Notifications</string>
+    <string name="channel_remote_name">Diplom Notifications</string>
     <string name="notification_user_new_message"> %1$s message to you: %2$s</string>
     <string name="notification_user_new_post" > %1$s wrote: %2$s</string>
     <string name="empty_list">Empty list</string>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Нмедиа</string>
-    <string name="app_text">Нмедиа приложение</string>
+    <string name="app_name">Диплом</string>
+    <string name="app_text">Дипломное приложение</string>
     <string name="post_avatar">Аватарка поста</string>
     <string name="likes_button">Лайки</string>
     <string name="share_post_button">Репосты</string>
@@ -11,7 +11,7 @@
     <string name="Post_menu">Меню поста</string>
     <string name="post_text">Введите текст</string>
     <string name="error_empty_content">Контент не может быть пустым!</string>
-    <string name="app_header">НМедиа</string>
+    <string name="app_header">Диплом</string>
     <string name="publish">Опубликовать</string>
     <string name="rollback_text">Отменить изменения</string>
     <string name="chooser_share_post">Поделиться постом</string>
