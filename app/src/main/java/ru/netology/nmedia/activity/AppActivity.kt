@@ -70,6 +70,7 @@ class AppActivity : AppCompatActivity() {
         requestPermissions(arrayOf(permission), 1)
     }
 
+
     private fun checkGoogleApiAvailability() {
         with(gapi) {
             val code = isGooglePlayServicesAvailable(this@AppActivity)
