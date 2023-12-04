@@ -56,7 +56,6 @@ class AppActivity : AppCompatActivity() {
                     }
                 )
         }
-
     }
 
     private fun requestNotificationPermission() {
@@ -69,7 +68,6 @@ class AppActivity : AppCompatActivity() {
         }
         requestPermissions(arrayOf(permission), 1)
     }
-
 
     private fun checkGoogleApiAvailability() {
         with(gapi) {
@@ -90,5 +88,4 @@ class AppActivity : AppCompatActivity() {
         }
         println("hello")
     }
-
 }

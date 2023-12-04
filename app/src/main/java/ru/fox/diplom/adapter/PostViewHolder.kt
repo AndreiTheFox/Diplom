@@ -35,9 +35,7 @@ class PostViewHolder(
             content.text = post.content
             like.text = counterWrite(post.likes)
             sharePostButton.text = counterWrite(post.shares)
-            viewsButton.text = counterWrite(post.views)
             like.isChecked = post.likedByMe
-
             menu.isVisible = post.ownedByMe
             menu.setOnClickListener {
                 PopupMenu(it.context, it).apply {

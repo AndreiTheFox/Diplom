@@ -1,6 +1,5 @@
 package ru.fox.diplom.activity
 
-
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -137,7 +136,7 @@ class FeedFragment : Fragment() {
                             true
                         }
 
-                        R.id.loguot -> {
+                        R.id.logout -> {
                             LogoutDialog(appAuth).show(
                                 parentFragmentManager, LogoutDialog.TAG
                             )
@@ -165,15 +164,6 @@ class FeedFragment : Fragment() {
             footer = PagingLoadStateAdapter { adapter.retry() },
         )
 
-//        viewModel.dataState.observe(viewLifecycleOwner) { state ->
-//            binding.progress.isVisible = state.loading
-//            binding.swiperefresh.isRefreshing = state.refreshing
-//            if (state.error) {
-//                Snackbar.make(binding.root, R.string.error_loading, Snackbar.LENGTH_LONG)
-//                    .setAction(R.string.retry) { viewModel.loadPosts() }
-//                    .show()
-//            }
-//        }
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.data.collectLatest(adapter::submitData)
@@ -216,11 +206,6 @@ class FeedFragment : Fragment() {
             }
         }
 
-//        viewModel.data.observe(viewLifecycleOwner) { state ->
-//            adapter.submitList(state.posts)
-//            binding.emptyText.isVisible = state.empty
-//        }
-
         binding.fab.setOnClickListener {
             if (authViewModel.authorized) {
                 findNavController().navigate(R.id.action_feedFragment_to_newPostFragment)
@@ -238,31 +223,6 @@ class FeedFragment : Fragment() {
         authViewModel.state.observe(viewLifecycleOwner) {
             adapter.refresh()
         }
-
-//        viewModel.newPostsCount.observe(viewLifecycleOwner) {
-//            if (it > 0) {
-//                binding.loadNewPosts.visibility = View.VISIBLE
-//                val buttonText = getString(R.string.new_posts) + "$it"
-//                binding.loadNewPosts.text = buttonText
-//            } else {
-//                binding.loadNewPosts.visibility = View.GONE
-//            }
-//        }
-
-        //Плавное прокручивание ленты постов при добавлении свежих загруженных постов в holder адаптера после нажатия пользователя
-//        adapter.registerAdapterDataObserver(object : RecyclerView.AdapterDataObserver() {
-//            override fun onItemRangeInserted(positionStart: Int, itemCount: Int) {
-//                if (positionStart == 0) {
-//                    binding.list.smoothScrollToPosition(0)
-//                }
-//            }
-//        })
-
-        //Загрузить свежие посты
-//        binding.loadNewPosts.setOnClickListener {
-//            viewModel.updateFeed()
-//            binding.loadNewPosts.visibility = View.GONE
-//        }
 
         return binding.root
     }
