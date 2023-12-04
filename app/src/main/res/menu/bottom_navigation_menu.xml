@@ -13,4 +13,5 @@
         android:id="@+id/users"
         android:icon="@drawable/ic_users_24"
         android:title="@string/users" />
+
 </menu>
