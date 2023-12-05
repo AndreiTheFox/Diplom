@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/top_app_bar"
+        android:id="@+id/topAppBar"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:background="@color/grayBackground"
@@ -32,6 +32,7 @@
             />
 
         <ImageButton
+            android:id="@+id/loginButton"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:backgroundTint="@color/grayBackground"
@@ -46,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top_app_bar"
+        app:layout_constraintTop_toBottomOf="@+id/topAppBar"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp">

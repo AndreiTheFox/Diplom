@@ -3,13 +3,11 @@ package ru.fox.diplom.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.view.MenuProvider
+import androidx.appcompat.widget.PopupMenu
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -118,45 +116,88 @@ class FeedFragment : Fragment() {
             }
         })
 
-        requireActivity().addMenuProvider(
-            object : MenuProvider {
-                override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                    menuInflater.inflate(R.menu.auth_menu, menu)
-                    menu.setGroupVisible(R.id.registered, authViewModel.authorized)
-                    menu.setGroupVisible(R.id.unregistered, !authViewModel.authorized)
-                }
+        binding.loginButton.setOnClickListener {
+            val popup = PopupMenu(requireContext(), it)
 
-                override fun onMenuItemSelected(menuItem: MenuItem): Boolean =
-                    when (menuItem.itemId) {
-                        R.id.login -> {
-                            findNavController()
-                                .navigate(
-                                    R.id.action_feedFragment_to_loginFragment
-                                )
-                            true
-                        }
-
-                        R.id.logout -> {
-                            LogoutDialog(appAuth).show(
-                                parentFragmentManager, LogoutDialog.TAG
+            popup.menuInflater.inflate(R.menu.auth_menu, popup.menu)
+            popup.menu.setGroupVisible(R.id.registered, authViewModel.authorized)
+            popup.menu.setGroupVisible(R.id.unregistered, !authViewModel.authorized)
+            popup.setOnMenuItemClickListener { menuItem: MenuItem ->
+                when (menuItem.itemId) {
+                    R.id.login -> {
+                        findNavController()
+                            .navigate(
+                                R.id.action_feedFragment_to_loginFragment
                             )
-                            true
-                        }
-
-                        R.id.register -> {
-                            findNavController()
-                                .navigate(
-                                    R.id.action_feedFragment_to_registerFragment
-                                )
-                            true
-                        }
-
-                        else -> false
+                        true
                     }
 
-            },
-            viewLifecycleOwner
-        )
+                    R.id.logout -> {
+                        LogoutDialog(appAuth).show(
+                            parentFragmentManager, LogoutDialog.TAG
+                        )
+                        true
+                    }
+
+                    R.id.register -> {
+                        findNavController()
+                            .navigate(
+                                R.id.action_feedFragment_to_registerFragment
+                            )
+                        true
+                    }
+
+                    else -> false
+
+                }
+            }
+            popup.setOnDismissListener {
+                // Respond to popup being dismissed.
+            }
+            // Show the popup menu.
+            popup.show()
+        }
+
+
+//        requireActivity().addMenuProvider(
+//            object : MenuProvider {
+//                override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+//                    menuInflater.inflate(R.menu.auth_menu, menu)
+//                    menu.setGroupVisible(R.id.registered, authViewModel.authorized)
+//                    menu.setGroupVisible(R.id.unregistered, !authViewModel.authorized)
+//                }
+//
+//                override fun onMenuItemSelected(menuItem: MenuItem): Boolean =
+//                    when (menuItem.itemId) {
+//                        R.id.login -> {
+//                            findNavController()
+//                                .navigate(
+//                                    R.id.action_feedFragment_to_loginFragment
+//                                )
+//                            true
+//                        }
+//
+//                        R.id.logout -> {
+//                            LogoutDialog(appAuth).show(
+//                                parentFragmentManager, LogoutDialog.TAG
+//                            )
+//                            true
+//                        }
+//
+//                        R.id.register -> {
+//                            findNavController()
+//                                .navigate(
+//                                    R.id.action_feedFragment_to_registerFragment
+//                                )
+//                            true
+//                        }
+//
+//                        else -> false
+//                    }
+//
+//            },
+//            viewLifecycleOwner
+//        )
         //End of Menu code
 
         binding.list.adapter = adapter.withLoadStateHeaderAndFooter(
@@ -179,7 +220,8 @@ class FeedFragment : Fragment() {
         @Suppress("DEPRECATION")
         lifecycleScope.launchWhenCreated {
             adapter.loadStateFlow.collectLatest { state ->
-                val isListEmpty = state.refresh is LoadState.NotLoading && adapter.itemCount == 0
+                val isListEmpty =
+                    state.refresh is LoadState.NotLoading && adapter.itemCount == 0
                 // show empty list
                 binding.emptyText.isVisible = isListEmpty
 
@@ -226,4 +268,6 @@ class FeedFragment : Fragment() {
 
         return binding.root
     }
+
+
 }//Конец Main
