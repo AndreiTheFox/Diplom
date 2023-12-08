@@ -79,23 +79,19 @@
             app:layout_constraintTop_toBottomOf="@+id/password"
             tools:ignore="VisualLintTextFieldSize" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
             android:layout_marginTop="16dp"
+            android:backgroundTint="@color/grayBackground"
             android:clickable="true"
             android:enabled="true"
-            android:background="#1D1B201F"
-            android:textColor="@color/textColor"
+            app:cornerRadius="14dp"
             android:text="@string/registration"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
+            android:textColor="@color/textColor"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/repeatPassword"
-            app:layout_constraintVertical_bias="0.199" />
+            app:layout_constraintTop_toBottomOf="@+id/repeatPassword" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
