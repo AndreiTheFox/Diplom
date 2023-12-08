@@ -54,10 +54,10 @@ class RegisterFragment : Fragment() {
             binding.register.setOnClickListener {
                 AndroidUtils.hideKeyboard(requireView())
 
-                val userName = binding.userName.text.toString()
-                val userLogin = binding.userLogin.text.toString()
-                val userPassword = binding.password.text.toString()
-                val userRepeatPassword = binding.repeatPassword.text.toString()
+                val userName = binding.userName.editText?.text.toString()
+                val userLogin = binding.userLogin.editText?.text.toString()
+                val userPassword = binding.password.editText?.text.toString()
+                val userRepeatPassword = binding.repeatPassword.editText?.text.toString()
 
                 //Check fields are not empty
                 if (userName.isBlank() || userLogin.isBlank() || userPassword.isBlank() || userRepeatPassword.isBlank()) {
