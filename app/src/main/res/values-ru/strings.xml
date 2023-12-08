@@ -62,4 +62,5 @@
     <string name="posts">Посты</string>
     <string name="events">События</string>
     <string name="users">Пользователи</string>
+    <string name="registration">Регистрация</string>
 </resources>
