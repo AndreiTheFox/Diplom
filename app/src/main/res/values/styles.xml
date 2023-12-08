@@ -29,8 +29,10 @@
 
     </style>
 
-    <style name="RoundButton" >
-        <item name="android:radius">14dp</item>
+    <style name="ShapeAppearanceOverlay.MyApp.Button.Circle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
     </style>
+
 
 </resources>
