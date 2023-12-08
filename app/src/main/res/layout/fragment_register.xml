@@ -100,12 +100,13 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="64dp"
         android:background="@color/grayBackground"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="RtlSymmetry">
+        tools:ignore="RtlSymmetry"
+        android:padding="8dp">
 
         <Button
             android:id="@+id/navBack"
