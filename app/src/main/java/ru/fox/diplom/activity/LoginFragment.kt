@@ -66,8 +66,8 @@ class LoginFragment : Fragment() {
 
             binding.login.setOnClickListener {
                 AndroidUtils.hideKeyboard(requireView())
-                val accountName = binding.userLogin.text.toString()
-                val accountPassword = binding.password.text.toString()
+                val accountName = binding.userLogin.editText?.text.toString()
+                val accountPassword = binding.password.editText?.text.toString()
                 if (accountName.isBlank() || accountPassword.isBlank()) {
                     Snackbar.make(binding.root, R.string.noLoginData, Snackbar.LENGTH_LONG).show()
                     return@setOnClickListener
