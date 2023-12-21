@@ -63,4 +63,8 @@
     <string name="events">События</string>
     <string name="users">Пользователи</string>
     <string name="registration">Регистрация</string>
+    <string name="post">Пост</string>
+    <string name="likers">Понравилось</string>
+    <string name="mentioned">Упомянуты</string>
+    <string name="participate">Участвовать</string>
 </resources>

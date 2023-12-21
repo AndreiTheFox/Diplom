@@ -11,9 +11,9 @@ import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import ru.fox.diplom.R
 import ru.fox.diplom.activity.NewPostFragment.Companion.textArg
+import ru.fox.diplom.adapter.DetailedPostViewHolder
 import ru.fox.diplom.adapter.OnInteractionListener
-import ru.fox.diplom.adapter.PostViewHolder
-import ru.fox.diplom.databinding.FragmentPostBinding
+import ru.fox.diplom.databinding.FragmentDetailedPostBinding
 import ru.fox.diplom.dto.Post
 import ru.fox.diplom.viewmodel.FeedItemViewModel
 @AndroidEntryPoint
@@ -23,7 +23,7 @@ class PostFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding = FragmentPostBinding.inflate(
+        val postBinding = FragmentDetailedPostBinding.inflate(
             inflater,
             container,
             false
@@ -31,7 +31,7 @@ class PostFragment : Fragment() {
         val viewModel: FeedItemViewModel by activityViewModels()
         val postId = arguments?.getLong("postId")
 
-        val adapter = PostViewHolder(binding.post, object : OnInteractionListener {
+        val adapter = DetailedPostViewHolder(postBinding, object : OnInteractionListener {
             override fun onEdit(post: Post) {
                 viewModel.edit(post)
                 findNavController().navigate(
@@ -74,6 +74,6 @@ class PostFragment : Fragment() {
 //            adapter.bind(post)
 //        }
 
-        return binding.root
+        return postBinding.root
     }
 }

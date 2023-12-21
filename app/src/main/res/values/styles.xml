@@ -22,7 +22,7 @@
 
     </style>
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Diplom" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">?colorControlNormal</item>
         <item name="colorPrimaryDark">?colorControlNormal</item>
         <item name="colorAccent">@color/lightBlue</item>

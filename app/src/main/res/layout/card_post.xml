@@ -17,14 +17,14 @@
         android:background="@color/grayBackground"
         android:padding="@dimen/common_spacing">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/avatar"
             android:layout_width="@dimen/post_avatar_size"
             android:layout_height="@dimen/post_avatar_size"
             android:contentDescription="@string/post_avatar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/post_avatar_drawable" />
+            android:src="@drawable/post_avatar_drawable" />
 
         <TextView
             android:id="@+id/author"
@@ -47,11 +47,12 @@
             android:id="@+id/published"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor="#1D1B20"
             android:layout_marginStart="@dimen/common_spacing"
             android:maxLines="1"
+            android:textColor="#1D1B20"
             app:layout_constraintBottom_toBottomOf="@id/avatar"
             app:layout_constraintEnd_toStartOf="@id/menu"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@id/avatar"
             app:layout_constraintTop_toBottomOf="@id/author"
             tools:text="@sample/posts.json/data/published" />
