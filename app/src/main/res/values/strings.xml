@@ -67,4 +67,5 @@
     <string name="likers">Likers</string>
     <string name="mentioned">Mentioned</string>
     <string name="participate">Participate</string>
+    <string name="event">Event</string>
 </resources>
